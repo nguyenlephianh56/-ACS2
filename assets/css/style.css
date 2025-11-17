@@ -1,0 +1,197 @@
+
+.btn-custom {
+    background-color: #8FABD4;
+    color: #000000;
+}   
+.footer {
+    background-color: #8FABD4;
+    color: #FFFFFF;
+}
+
+
+/* CONTAINER CHUNG CHO HERO (HỖ TRỢ RELATIVE CHO FORM NỔI) */
+.hero-section-full-width {
+    position: relative;
+    padding-bottom: 50px; /* Không gian cho Form nổi xuống */
+    width: 100%; 
+}
+
+
+.main-banner img {
+    width: 105%; /* Buộc hình ảnh kéo giãn toàn chiều rộng */
+    height: auto; 
+
+}
+
+/* ------------------------------------------- */
+/* KHU VỰC FORM TÌM KIẾM NÂNG CAO (Dưới Banner) */
+/* ------------------------------------------- */
+
+.card-advance-search {
+    border-radius: 12px !important; /* Bo tròn góc Card */
+    border: 1px solid #ddd;
+}
+
+.card-advance-search .row {
+    margin: 0;
+}
+
+/* Định kiểu cho tất cả các Input/Dropdown trong Form */
+.card-advance-search .input-group-text,
+.card-advance-search .form-control,
+.card-advance-search .form-select {
+    border: none !important; /* Loại bỏ viền Input Group */
+    background-color: transparent !important;
+}
+
+/* Tinh chỉnh Input Group Text (Icon) */
+.card-advance-search .input-group-text {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Định kiểu cho Viền phân cách giữa các ô */
+/* Áp dụng viền cho tất cả các cột ngoại trừ cột cuối */
+.card-advance-search .col-md-4,
+.card-advance-search .col-md-3 {
+    border-right: 1px solid #eee; 
+}
+.card-advance-search .col-md-2 {
+    /* Đảm bảo cột nút không có viền phải */
+    border-right: none;
+}
+.tieu-de-hot {
+    color: #4A70A9;
+    font-weight: bold;
+}
+.text{
+    color: #000000;
+}
+
+/* card thông tin phòng */
+/* Hiệu ứng Zoom ảnh khi hover */
+  .product-card-img-wrapper {
+    height: 200px; /* Chiều cao cố định cho wrapper ảnh */
+    overflow: hidden; /* Đảm bảo ảnh không tràn ra ngoài khi zoom */
+    border-top-left-radius: 0.375rem; /* Bo góc trên trái */
+    border-top-right-radius: 0.375rem; /* Bo góc trên phải */
+  }
+
+  .product-card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh luôn đầy đủ trong khung hình */
+    transition: transform 0.5s ease; /* Hiệu ứng chuyển động mượt mà */
+  }
+
+  .product-card-img-wrapper:hover img {
+    transform: scale(1.1); /* Zoom ảnh lên 10% khi rê chuột */
+  }
+
+  /* Tùy chỉnh nhỏ cho nút HOT */
+  .custom-hot-tag {
+    letter-spacing: 0.5px;
+  }
+
+  /* Tùy chỉnh nút Review */
+  .video-review-btn {
+    font-size: 0.9em;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* Tùy chỉnh nút Like */
+  .like-btn {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  .like-btn svg {
+      transition: fill 0.3s ease; /* Thêm hiệu ứng cho icon */
+  }
+  .like-btn:hover svg {
+      fill: #dc3545; /* Đổi màu icon khi hover */
+  }
+
+  /* product-details */
+  /* Đảm bảo các wrapper ảnh chính và video chiếm toàn bộ chiều cao trong grid */
+.main-image-wrapper,
+.video-ad-wrapper {
+    height: 100%;
+}
+
+/* Định kiểu chung cho tất cả các ảnh trong khu vực chi tiết */
+.product-details-container img {
+    width: 100%;
+    object-fit: cover;
+    display: block; 
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hiệu ứng zoom nhẹ khi di chuột */
+.product-details-container img:hover {
+    transform: scale(1.02);
+    cursor: zoom-in;
+}
+
+/* -------------------------------------- */
+/* ĐỊNH KIỂU THUMBNAIL GALLERY MỚI */
+/* -------------------------------------- */
+
+/* Đảm bảo ảnh trong Carousel chính hiển thị đúng kích thước */
+.main-gallery-container img.main-image-display {
+    height: 60vh; /* Đặt chiều cao tương đối để ảnh chính nổi bật */
+    object-fit: cover;
+}
+
+/* Định kiểu cho các ảnh thumbnail */
+.thumbnail-gallery .thumbnail-item {
+    width: 100px; /* Chiều rộng cố định cho thumbnail */
+    height: 70px; /* Chiều cao cố định cho thumbnail */
+    object-fit: cover;
+    opacity: 0.6;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Hiệu ứng khi di chuột và khi đang active */
+.thumbnail-gallery .thumbnail-item:hover,
+.thumbnail-gallery .thumbnail-item.active {
+    opacity: 1;
+    border-color: #4A70A9; 
+}
+
+/* Định kiểu cho nút Play Video (Nếu ảnh đầu tiên là video) */
+.play-button-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0.3rem; /* Bo góc theo ảnh */
+    cursor: pointer;
+}
+
+/* -------------------------------------- */
+/* ĐỊNH KIỂU KHU VỰC GIỚI THIỆU/MÔ TẢ */
+/* -------------------------------------- */
+
+.product-description-content ul.product-features li {
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Tinh chỉnh nút Rút gọn/Xem thêm */
+.product-description-content .btn-link {
+    font-weight: bold;
+    text-decoration: none;
+    padding-right: 0;
+}
