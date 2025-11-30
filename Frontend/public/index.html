@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dịch vụ K&A</title>
+    <!-- boostrap css -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+     rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+     crossorigin="anonymous">
+    <!-- bootstrap icon -->
+     <!-- icon boostrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+     <!-- css -->
+        <link rel="stylesheet" href="../src/assests/css/style.css">
+    <!-- css reponsive -->
+        <link rel="stylesheet" media="screen and (max-width: 768px)" href="../src/assests/css/reponsivecss.css">
+    <!-- css tạm thời -->
+        <link rel="stylesheet" href="../src/assests/css/uploadroom.css">
+    <!-- favicon -->
+     <link rel="icon" type="image/png" href="../src/assests/images/favicon.png">
+    <!-- font web -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- navbar -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top " style="background-color: #EFECE3; " >
+        <div class="container-fluid">
+            
+            <!-- Logo  -->
+            <a class="navbar-brand me-5" href="index.html">
+                <!-- NOTE: Đặt width/height cố định để tránh CLS -->
+                <img src="../src/assests/images/logo.png" alt="logo" style="height: 40px; width: auto"> 
+            </a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#centeredNav" aria-controls="centeredNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Liên kết chính (CĂN GIỮA) -->
+            <div class="collapse navbar-collapse w-100" id="centeredNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 justify-content-center">
+                    <li class="nav-item me-4"> 
+                        <a class="nav-link text-dark fw-bold" href="#">Kí Túc Xá</a>
+                    </li>
+                    <li class="nav-item me-4">
+                        <a class="nav-link text-dark fw-bold" href="#">Phòng trọ</a>
+                    </li>
+                    <li class="nav-item me-4">
+                        <a class="nav-link text-dark fw-bold" href="#">Nguyên Căn</a>
+                    </li>
+                    <li class="nav-item me-4">
+                        <a class="nav-link text-dark fw-bold" href="#">Chung Cư Mini</a>
+                    </li>
+                </ul>
+                 <!-- Khu vực Hành động Người dùng (Căn phải) -->
+            <div class="d-flex align-items-center"> 
+                
+                <!-- Icons -->
+                 <!-- yêu thích -->
+                <a href="#" class="text-secondary fs-4 me-3"><i class="bi bi-heart"></i></a>
+                <!-- thông báo -->
+                <a href="#" class="text-secondary fs-4 me-4"><i class="bi bi-bell"></i></a>
+
+                <!-- Nút Đăng nhập -->
+                <!-- Cấu trúc ngang: Bo tròn, px-3 (đủ dài), Icon đặt sau chữ -->
+               <a href="/Frontend/src/pages/login.html" ><button class="btn btn-custom me-2 px-3 text-nowrap rounded-pill">
+                    Đăng nhập <i class="bi bi-person-fill"></i>    
+                </button> </a>
+                
+                <!-- Nút đăng tin -->
+                <!-- Cấu trúc ngang: Bo tròn, px-3, Icon đặt sau chữ, thêm Badge -->
+                <button 
+    class="btn btn-custom me-2 px-3 text-nowrap rounded-pill" 
+    data-bs-toggle="modal" 
+    data-bs-target="#postModal">
+    
+    Đăng tin <i class="bi bi-pencil-square ms-1"></i>
+</button>
+                
+            </div>
+
+        </div>
+            </div>       
+    </nav>
+    
+    <!-- hero banner -->
+     <section class="hero-section mt-5">
+        <div class="hero-banner d-flex justify-content-center align-items-center">
+            <img src="../src/assests/images/banner1.png" alt="banner-chinh">
+        </div>
+   </section>
+
+   <!-- form tìm kiếm -->
+   <!-- form search -->
+    <div class="container my-5">
+    <div class="card card-advance-search shadow-sm p-4">
+        <form class="row g-3 align-items-center">
+            
+            <div class="col-md-4 col-sm-12">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-text bg-white border-0"><i class="bi bi-search"></i></span>
+                    <input type="text" class="form-control border-0" placeholder="Tìm bất động sản..." aria-label="Tìm kiếm">
+                </div>
+            </div>
+            
+            <div class="col-md-3 col-sm-6">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-text bg-white border-0"><i class="bi bi-geo-alt"></i></span>
+                    <select class="form-select border-0" aria-label="Chọn khu vực">
+                        <option selected>Chọn khu vực</option>
+                        <option value="1">Hà Nội</option>
+                        <option value="2">TP Hồ Chí Minh</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-3 col-sm-6">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-text bg-white border-0"><i class="bi bi-building"></i></span>
+                    <select class="form-select border-0" aria-label="Loại hình BĐS">
+                        <option selected>Loại hình thuê nhà</option>
+                        <option value="1">Nhà riêng</option>
+                        <option value="2">Chung cư</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-12">
+                <button class="btn btn-custom btn-lg w-100" type="submit">
+                    Tìm nhà
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- slide carousel (hinh anh) -->
+<div id="multiItemCarousel" class="carousel slide" data-bs-ride="carousel">
+  
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#multiItemCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#multiItemCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  </div>
+
+  <div class="carousel-inner">
+    
+    <div class="carousel-item active ">
+      <div class="row g-3"> <div class="col-12 col-md-4 shine-banner">
+          <img src="../src/assests/images/banner 2.png" class="d-block w-100" alt="Banner 1">
+        </div>
+        
+        <div class="col-12 col-md-4 shine-banner">
+          <img src="../src/assests/images/banner3.png" class="d-block w-100" alt="Banner 2">
+        </div>
+        
+        <div class="col-12 col-md-4 shine-banner">
+          <img src="../src/assests/images/banner4.png" class="d-block w-100" alt="Banner 3">
+        </div>
+
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="row g-3">
+        
+        <div class="col-12 col-md-4 shine-banner">
+          <img src="../src/assests/images/banner5.png" class="d-block w-100" alt="Banner 4">
+        </div>
+        
+        <div class="col-12 col-md-4 shine-banner">
+          <img src="../src/assests/images/banner3.png" class="d-block w-100" alt="Banner 5">
+        </div>
+        
+        <div class="col-12 col-md-4 shine-banner">
+          <img src="../src/assests/images/banner6.png" class="d-block w-100" alt="Banner 6">
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#multiItemCarousel" data-bs-slide-to="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#multiItemCarousel" data-bs-slide-to="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- noi dung chinh -->
+<section class="hot_pick my-4 pt-4 border" style="background-color:#8FABD4"> 
+    
+    <div class="container">
+        <!-- text -->
+        <div class="text-center mb-4 col-12">
+            <h2 class="text-primary fw-bold">Lựa chọn hot <i class="bi bi-fire" style="color: red;"></i></h2>    
+        </div>
+        
+        <!-- 1 hang card sp -->
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 gx-2 gy-3 justify-content-center pb-5 mt-3">
+            <!-- 1 card sp -->
+            <div class="col"> 
+                <div class="card product-card-custom shadow-sm h-100">
+                    <div class="card-img-top-container">
+                        <img src="../src/assests/images/tro1.jpg" class="card-img-top img-fluid" alt="iPhone 16e">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title product-title">Điện thoại iPhone 16e 128GB</h5>
+                        <div class="d-flex justify-content-between align-items-center mt-1">
+                            <div class="price-container">
+                                <p class="current-price mb-0">16.190.000₫</p>
+                                <p class="location-info text-muted mb-0 mt-1"><i class="bi bi-geo-alt-fill"></i> TPHCM</p>
+                                <a href="" class="details">Nhà nguyên căn</a> 
+                            </div>
+                            <button class="btn btn-add-to-favourite" type="button"><i class="bi bi-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- het 1 card -->
+            <div class="col"> 
+                <div class="card product-card-custom shadow-sm h-100">
+                    <div class="card-img-top-container">
+                        <img src="[URL_HINH_ANH]" class="card-img-top img-fluid" alt="iPhone 16e">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title product-title">Điện thoại iPhone 16e 128GB</h5>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div class="price-container">
+                                <p class="current-price mb-0">**16.190.000₫**</p>
+                                <p class="location-info text-muted mb-0 mt-1"><i class="bi bi-geo-alt-fill"></i> TPHCM</p>
+                                <a href="" class="details">Nhà nguyên căn</a> 
+                            </div>
+                            <button class="btn btn-add-to-favourite" type="button"><i class="bi bi-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col"> 
+                 <div class="card product-card-custom shadow-sm h-100">
+                    <div class="card-img-top-container">
+                        <img src="[URL_HINH_ANH]" class="card-img-top img-fluid" alt="iPhone 16e">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title product-title">Điện thoại iPhone 16e 128GB</h5>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div class="price-container">
+                                <p class="current-price mb-0">**16.190.000₫**</p>
+                                <p class="location-info text-muted mb-0 mt-1"><i class="bi bi-geo-alt-fill"></i> TPHCM</p>
+                                <a href="" class="details">Nhà nguyên căn</a> 
+                            </div>
+                            <button class="btn btn-add-to-favourite" type="button"><i class="bi bi-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col"> 
+                 <div class="card product-card-custom shadow-sm h-100">
+                    <div class="card-img-top-container">
+                        <img src="[URL_HINH_ANH]" class="card-img-top img-fluid" alt="iPhone 16e">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title product-title">Điện thoại iPhone 16e 128GB</h5>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div class="price-container">
+                                <p class="current-price mb-0">**16.190.000₫**</p>
+                                <p class="location-info text-muted mb-0 mt-1"><i class="bi bi-geo-alt-fill"></i> TPHCM</p>
+                                <a href="" class="details">Nhà nguyên căn</a> 
+                            </div>
+                            <button class="btn btn-add-to-favourite" type="button"><i class="bi bi-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col"> 
+                 <div class="card product-card-custom shadow-sm h-100">
+                    <div class="card-img-top-container">
+                        <img src="[URL_HINH_ANH]" class="card-img-top img-fluid" alt="iPhone 16e">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title product-title">Điện thoại iPhone 16e 128GB</h5>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div class="price-container">
+                                <p class="current-price mb-0">**16.190.000₫**</p>
+                                <p class="location-info text-muted mb-0 mt-1"><i class="bi bi-geo-alt-fill"></i> TPHCM</p>
+                                <a href="" class="details">Nhà nguyên căn</a> 
+                            </div>
+                            <button class="btn btn-add-to-favourite" type="button"><i class="bi bi-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col"> 
+                 <div class="card product-card-custom shadow-sm h-100">
+                    <div class="card-img-top-container">
+                        <img src="[URL_HINH_ANH]" class="card-img-top img-fluid" alt="iPhone 16e">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title product-title">Điện thoại iPhone 16e 128GB</h5>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div class="price-container">
+                                <p class="current-price mb-0">**16.190.000₫**</p>
+                                <p class="location-info text-muted mb-0 mt-1"><i class="bi bi-geo-alt-fill"></i> TPHCM</p>
+                                <p class="original-price text-muted text-decoration-line-through mb-0">16.990.000₫</p>
+                            </div>
+                            <button class="btn btn-add-to-favourite" type="button"><i class="bi bi-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col"> 
+                 <div class="card product-card-custom shadow-sm h-100">
+                    <div class="card-img-top-container">
+                        <img src="[URL_HINH_ANH]" class="card-img-top img-fluid" alt="iPhone 16e">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title product-title">Điện thoại iPhone 16e 128GB</h5>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div class="price-container">
+                                <p class="current-price mb-0">**16.190.000₫**</p>
+                                <p class="location-info text-muted mb-0 mt-1"><i class="bi bi-geo-alt-fill"></i> TPHCM</p>
+                                <p class="original-price text-muted text-decoration-line-through mb-0">16.990.000₫</p>
+                            </div>
+                            <button class="btn btn-add-to-favourite" type="button"><i class="bi bi-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col"> 
+                 <div class="card product-card-custom shadow-sm h-100">
+                    <div class="card-img-top-container">
+                        <img src="[URL_HINH_ANH]" class="card-img-top img-fluid" alt="iPhone 16e">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title product-title">Điện thoại iPhone 16e 128GB</h5>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div class="price-container">
+                                <p class="current-price mb-0">**16.190.000₫**</p>
+                                <p class="location-info text-muted mb-0 mt-1"><i class="bi bi-geo-alt-fill"></i> TPHCM</p>
+                                <p class="original-price text-muted text-decoration-line-through mb-0">16.990.000₫</p>
+                            </div>
+                            <button class="btn btn-add-to-favourite" type="button"><i class="bi bi-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- /*het div row*/ -->
+        </div> 
+
+ <!-- /*het div container*/ -->
+    </div> 
+</section>
+
+         <!-- banner big 2 -->
+       <section class="bannerbig2">
+        <div class="hero-banner2 shine-banner">
+            <img src="../src/assests/images/bannerbig2.png" alt="">
+        </div>
+       </section>
+
+    
+    <!-- noi dung chinh KTX -->
+<section class="hot_pick my-4 pt-4 border"> 
+    
+    <div class="container">
+        <!-- text -->
+        <div class=" mb-4 col-12">
+            <h2 class="chu_tieu_de">Lựa chọn hot <i class="bi bi-fire" style="color: red;"></i></h2>    
+        </div>
+        
+        <!-- 1 hang card sp -->
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 gx-2 gy-3 justify-content-center pb-5 mt-3"  >
+            <!-- 1 card sp -->
+            <div class="col"> 
+                <div class="card product-card-custom shadow-sm h-100">
+                    <div class="card-img-top-container">
+                        <img src="../src/assests/images/tro1.jpg" class="card-img-top img-fluid" alt="iPhone 16e">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title product-title">Điện thoại iPhone 16e 128GB</h5>
+                        <div class="d-flex justify-content-between align-items-center mt-1">
+                            <div class="price-container">
+                                <p class="current-price mb-0">**16.190.000₫**</p>
+                                <p class="location-info text-muted mb-0 mt-1"><i class="bi bi-geo-alt-fill"></i> TPHCM</p>
+                                <a href="" id="details">Nhà nguyên căn</a> 
+                            </div>
+                            <button class="btn btn-add-to-favourite" type="button"><i class="bi bi-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- het 1 card -->
+            <div class="col"> 
+                <div class="card product-card-custom shadow-sm h-100">
+                    <div class="card-img-top-container">
+                        <img src="[URL_HINH_ANH]" class="card-img-top img-fluid" alt="iPhone 16e">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title product-title">Điện thoại iPhone 16e 128GB</h5>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div class="price-container">
+                                <p class="current-price mb-0">**16.190.000₫**</p>
+                                <p class="location-info text-muted mb-0 mt-1"><i class="bi bi-geo-alt-fill"></i> TPHCM</p>
+                                <p class="original-price text-muted text-decoration-line-through mb-0">16.990.000₫</p>
+                            </div>
+                            <button class="btn btn-add-to-favourite" type="button"><i class="bi bi-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col"> 
+                 <div class="card product-card-custom shadow-sm h-100">
+                    <div class="card-img-top-container">
+                        <img src="[URL_HINH_ANH]" class="card-img-top img-fluid" alt="iPhone 16e">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title product-title">Điện thoại iPhone 16e 128GB</h5>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div class="price-container">
+                                <p class="current-price mb-0">**16.190.000₫**</p>
+                                <p class="location-info text-muted mb-0 mt-1"><i class="bi bi-geo-alt-fill"></i> TPHCM</p>
+                                <p class="original-price text-muted text-decoration-line-through mb-0">16.990.000₫</p>
+                            </div>
+                            <button class="btn btn-add-to-favourite" type="button"><i class="bi bi-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col"> 
+                 <div class="card product-card-custom shadow-sm h-100">
+                    <div class="card-img-top-container">
+                        <img src="[URL_HINH_ANH]" class="card-img-top img-fluid" alt="iPhone 16e">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title product-title">Điện thoại iPhone 16e 128GB</h5>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div class="price-container">
+                                <p class="current-price mb-0">**16.190.000₫**</p>
+                                <p class="location-info text-muted mb-0 mt-1"><i class="bi bi-geo-alt-fill"></i> TPHCM</p>
+                                <p class="original-price text-muted text-decoration-line-through mb-0">16.990.000₫</p>
+                            </div>
+                            <button class="btn btn-add-to-favourite" type="button"><i class="bi bi-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col"> 
+                 <div class="card product-card-custom shadow-sm h-100">
+                    <div class="card-img-top-container">
+                        <img src="[URL_HINH_ANH]" class="card-img-top img-fluid" alt="iPhone 16e">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title product-title">Điện thoại iPhone 16e 128GB</h5>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div class="price-container">
+                                <p class="current-price mb-0">**16.190.000₫**</p>
+                                <p class="location-info text-muted mb-0 mt-1"><i class="bi bi-geo-alt-fill"></i> TPHCM</p>
+                                <p class="original-price text-muted text-decoration-line-through mb-0">16.990.000₫</p>
+                            </div>
+                            <button class="btn btn-add-to-favourite" type="button"><i class="bi bi-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col"> 
+                 <div class="card product-card-custom shadow-sm h-100">
+                    <div class="card-img-top-container">
+                        <img src="[URL_HINH_ANH]" class="card-img-top img-fluid" alt="iPhone 16e">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title product-title">Điện thoại iPhone 16e 128GB</h5>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div class="price-container">
+                                <p class="current-price mb-0">**16.190.000₫**</p>
+                                <p class="location-info text-muted mb-0 mt-1"><i class="bi bi-geo-alt-fill"></i> TPHCM</p>
+                                <p class="original-price text-muted text-decoration-line-through mb-0">16.990.000₫</p>
+                            </div>
+                            <button class="btn btn-add-to-favourite" type="button"><i class="bi bi-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col"> 
+                 <div class="card product-card-custom shadow-sm h-100">
+                    <div class="card-img-top-container">
+                        <img src="[URL_HINH_ANH]" class="card-img-top img-fluid" alt="iPhone 16e">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title product-title">Điện thoại iPhone 16e 128GB</h5>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div class="price-container">
+                                <p class="current-price mb-0">**16.190.000₫**</p>
+                                <p class="location-info text-muted mb-0 mt-1"><i class="bi bi-geo-alt-fill"></i> TPHCM</p>
+                                <p class="original-price text-muted text-decoration-line-through mb-0">16.990.000₫</p>
+                            </div>
+                            <button class="btn btn-add-to-favourite" type="button"><i class="bi bi-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col"> 
+                 <div class="card product-card-custom shadow-sm h-100">
+                    <div class="card-img-top-container">
+                        <img src="[URL_HINH_ANH]" class="card-img-top img-fluid" alt="iPhone 16e">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title product-title">Điện thoại iPhone 16e 128GB</h5>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div class="price-container">
+                                <p class="current-price mb-0">**16.190.000₫**</p>
+                                <p class="location-info text-muted mb-0 mt-1"><i class="bi bi-geo-alt-fill"></i> TPHCM</p>
+                                <p class="original-price text-muted text-decoration-line-through mb-0">16.990.000₫</p>
+                            </div>
+                            <button class="btn btn-add-to-favourite" type="button"><i class="bi bi-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- /*het div row*/ -->
+        </div> 
+
+ <!-- /*het div container*/ -->
+    </div> 
+</section>
+
+<!-- cac phuong cua da nang cua da nang -->
+<section class="outstanding-cities py-5 bg-white">
+    <div class="container">
+        
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="chu_tieu_de fw-bold text-uppercase mb-0">Phường ở Đà Nẵng</h3>
+            
+            </div>
+
+        <div id="wardCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+                
+                <!-- 1 hang carousel -->
+                <div class="carousel-item active">
+                    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
+                        
+                        <div class="col">
+                            <a href="#" class="ward-card shadow-sm d-block text-decoration-none">
+                                <div class="ward-img-container">
+                                    <img src="..//src/assests/images/anhai.jpg" alt="An Hải" class="img-fluid w-100">
+                                </div>
+                                <div class="ward-info p-2 bg-white text-center">
+                                    <h6 class="fw-bold text-dark mb-0 small">An Hải</h6>
+                                </div>
+                            </a>
+                        </div>
+                        
+                            <div class="col">
+                            <a href="#" class="ward-card shadow-sm d-block text-decoration-none">
+                                <div class="ward-img-container">
+                                    <img src="..//src/assests/images/ankhe.jpg" alt="An Khê" class="img-fluid w-100">
+                                </div>
+                                <div class="ward-info p-2 bg-white text-center">
+                                    <h6 class="fw-bold text-dark mb-0 small">An Khê</h6>
+                                </div>
+                            </a>
+                        </div>
+
+                            <div class="col">
+                            <a href="#" class="ward-card shadow-sm d-block text-decoration-none">
+                                <div class="ward-img-container">
+                                    <img src="..//src/assests/images/thanhkhe.jpg" alt="Thanh Khê" class="img-fluid w-100">
+                                </div>
+                                <div class="ward-info p-2 bg-white text-center">
+                                    <h6 class="fw-bold text-dark mb-0 small">Thanh Khê</h6>
+                                </div>
+                            </a>
+                        </div>
+
+                            <div class="col">
+                            <a href="#" class="ward-card shadow-sm d-block text-decoration-none">
+                                <div class="ward-img-container">
+                                    <img src="..//src/assests/images/haichau.jpg" alt="Hải Châu" class="img-fluid w-100">
+                                </div>
+                                <div class="ward-info p-2 bg-white text-center">
+                                    <h6 class="fw-bold text-dark mb-0 small">Hải Châu</h6>
+                                </div>
+                            </a>
+                        </div>
+
+                            <div class="col">
+                            <a href="#" class="ward-card shadow-sm d-block text-decoration-none">
+                                <div class="ward-img-container">
+                                    <img src="..//src/assests/images/camle.jpeg" alt="Cẩm Lệ" class="img-fluid w-100">
+                                </div>
+                                <div class="ward-info p-2 bg-white text-center">
+                                    <h6 class="fw-bold text-dark mb-0 small">Cẩm Lệ</h6>
+                                </div>
+                            </a>
+                        </div>
+
+                            <div class="col">
+                            <a href="#" class="ward-card shadow-sm d-block text-decoration-none">
+                                <div class="ward-img-container">
+                                    <img src="..//src/assests/images/bana.jpg" alt="Bà Nà" class="img-fluid w-100">
+                                </div>
+                                <div class="ward-info p-2 bg-white text-center">
+                                    <h6 class="fw-bold text-dark mb-0 small">Bà Nà</h6>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
+                        
+                            <div class="col">
+                            <a href="#" class="ward-card shadow-sm d-block text-decoration-none">
+                                <div class="ward-img-container">
+                                    <img src="..//src/assests/images/haivan.jpg" alt="Hải Vân" class="img-fluid w-100">
+                                </div>
+                                <div class="ward-info p-2 bg-white text-center">
+                                    <h6 class="fw-bold text-dark mb-0 small">Hải Vân</h6>
+                                </div>
+                            </a>
+                        </div>
+
+                           <div class="col">
+                            <a href="#" class="ward-card shadow-sm d-block text-decoration-none">
+                                <div class="ward-img-container">
+                                    <img src="..//src/assests/images/hoacuong.jpg" alt="Hòa Cường" class="img-fluid w-100">
+                                </div>
+                                <div class="ward-info p-2 bg-white text-center">
+                                    <h6 class="fw-bold text-dark mb-0 small">Hòa Cường</h6>
+                                </div>
+                            </a>
+                        </div>
+
+                            <div class="col">
+                            <a href="#" class="ward-card shadow-sm d-block text-decoration-none">
+                                <div class="ward-img-container">
+                                    <img src="..//src/assests/images/hoakhanh.webp" alt="Hòa Khánh" class="img-fluid w-100">
+                                </div>
+                                <div class="ward-info p-2 bg-white text-center">
+                                    <h6 class="fw-bold text-dark mb-0 small">Hòa Khánh</h6>
+                                </div>
+                            </a>
+                        </div>
+
+                            <div class="col">
+                            <a href="#" class="ward-card shadow-sm d-block text-decoration-none">
+                                <div class="ward-img-container">
+                                    <img src="..//src/assests/images/hoatien.jpg" alt="Hòa tiến" class="img-fluid w-100">
+                                </div>
+                                <div class="ward-info p-2 bg-white text-center">
+                                    <h6 class="fw-bold text-dark mb-0 small">Hòa Tiến</h6>
+                                </div>
+                            </a>
+                        </div>
+
+                            <div class="col">
+                            <a href="#" class="ward-card shadow-sm d-block text-decoration-none">
+                                <div class="ward-img-container">
+                                    <img src="..//src/assests/images/hoavang.jpg" alt="Hòa Vang" class="img-fluid w-100">
+                                </div>
+                                <div class="ward-info p-2 bg-white text-center">
+                                    <h6 class="fw-bold text-dark mb-0 small">Hòa Vang</h6>
+                                </div>
+                            </a>
+                        </div>
+
+                            <div class="col">
+                            <a href="#" class="ward-card shadow-sm d-block text-decoration-none">
+                                <div class="ward-img-container">
+                                    <img src="..//src/assests/images/hoaxuan.jpg" alt="Hòa Xuân" class="img-fluid w-100">
+                                </div>
+                                <div class="ward-info p-2 bg-white text-center">
+                                    <h6 class="fw-bold text-dark mb-0 small">Hòa Xuân</h6>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
+                        
+                           <div class="col">
+                            <a href="#" class="ward-card shadow-sm d-block text-decoration-none">
+                                <div class="ward-img-container">
+                                    <img src="..//src/assests/images/lienchieu.jpg" alt="Liên Chiểu" class="img-fluid w-100">
+                                </div>
+                                <div class="ward-info p-2 bg-white text-center">
+                                    <h6 class="fw-bold text-dark mb-0 small">Liên CHiểu</h6>
+                                </div>
+                            </a>
+                        </div>
+
+                            <div class="col">
+                            <a href="#" class="ward-card shadow-sm d-block text-decoration-none">
+                                <div class="ward-img-container">
+                                    <img src="..//src/assests/images/nguhanhson.jpg" alt="5hanhson" class="img-fluid w-100">
+                                </div>
+                                <div class="ward-info p-2 bg-white text-center">
+                                    <h6 class="fw-bold text-dark mb-0 small">Ngũ Hành Sơn</h6>
+                                </div>
+                            </a>
+                        </div>
+                        
+
+                            <div class="col">
+                            <a href="#" class="ward-card shadow-sm d-block text-decoration-none">
+                                <div class="ward-img-container">
+                                    <img src="..//src/assests/images/sontra.jpg" alt="HCM" class="img-fluid w-100">
+                                </div>
+                                <div class="ward-info p-2 bg-white text-center">
+                                    <h6 class="fw-bold text-dark mb-0 small">Sơn Trà</h6>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#wardCarousel" data-bs-slide="prev" style="width: 5%; margin-left: -5%;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#wardCarousel" data-bs-slide="next" style="width: 5%; margin-right: -5%;">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<!-- upload room (tạm thời) -->
+<div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content shadow-lg">
+            
+            <div class="modal-header border-bottom-0 pb-0">
+                <h5 class="modal-title fw-bold text-center w-100 fs-4" id="postModalLabel">Tạo tin đăng mới</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body pt-2">
+                <form id="listingForm">
+                    
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white me-2" style="width: 40px; height: 40px;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <div class="fw-bold text-dark">Bạn (Chủ trọ)</div>
+                            <div class="badge bg-light text-secondary border rounded-pill px-2">Công khai</div>
+                        </div>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control fw-bold fs-5 border-0 border-bottom rounded-0 shadow-none ps-0" id="postTitle" placeholder="Tiêu đề">
+                        <label for="postTitle" class="ps-0">Tiêu đề (VD: Phòng trọ giá rẻ gần ĐH Bách Khoa...)</label>
+                    </div>
+
+                    <div class="row g-2 mb-3">
+                        <div class="col-md-4">
+                            <label class="fw-bold small text-muted">LOẠI PHÒNG</label>
+                            <select class="form-select">
+                                <option selected>Phòng trọ</option>
+                                <option value="1">Kí túc xá</option>
+                                <option value="2">Căn hộ</option>
+                                <option value="3">Nhà nguyên căn</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="fw-bold small text-muted">GIÁ (VNĐ)</label>
+                            <input type="number" class="form-control" placeholder="Ví dụ: 2000000">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="fw-bold small text-muted">DIỆN TÍCH (m²)</label>
+                            <input type="number" class="form-control" placeholder="Ví dụ: 25">
+                        </div>
+                    </div>
+
+                    <div class="card bg-light border-0 mb-4">
+                        <div class="card-body">
+                            <h6 class="fw-bold small text-muted mb-3"><i class="fas fa-map-marker-alt me-1"></i> ĐỊA CHỈ TẠI ĐÀ NẴNG</h6>
+                            
+                            <div class="row g-2">
+                                <div class="col-md-4">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control bg-white" id="cityInput" value="TP. Đà Nẵng" readonly>
+                                        <label for="cityInput">Thành phố</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="districtSelect" aria-label="Chọn Quận">
+                                            <option selected disabled>Chọn Quận/Huyện</option>
+                                            <option value="hai_chau">Q. Hải Châu</option>
+                                            <option value="thanh_khe">Q. Thanh Khê</option>
+                                            <option value="son_tra">Q. Sơn Trà</option>
+                                            <option value="ngu_hanh_son">Q. Ngũ Hành Sơn</option>
+                                            <option value="lien_chieu">Q. Liên Chiểu</option>
+                                            <option value="cam_le">Q. Cẩm Lệ</option>
+                                            <option value="hoa_vang">H. Hòa Vang</option>
+                                            <option value="hoang_sa">H. Hoàng Sa</option>
+                                        </select>
+                                        <label for="districtSelect">Quận/Huyện</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="streetInput" placeholder="Số nhà, đường">
+                                        <label for="streetInput">Số nhà, Tên đường</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="fw-bold small text-muted mb-2">TIỆN ÍCH</label>
+                        <div class="d-flex flex-wrap gap-2">
+                            <input type="checkbox" class="btn-check" id="wifi" autocomplete="off">
+                            <label class="btn btn-outline-secondary btn-sm rounded-pill" for="wifi">Wifi</label>
+
+                            <input type="checkbox" class="btn-check" id="ac" autocomplete="off">
+                            <label class="btn btn-outline-secondary btn-sm rounded-pill" for="ac">Máy lạnh</label>
+                            
+                            <input type="checkbox" class="btn-check" id="wc" autocomplete="off">
+                            <label class="btn btn-outline-secondary btn-sm rounded-pill" for="wc">WC riêng</label>
+                            
+                            <input type="checkbox" class="btn-check" id="parking" autocomplete="off">
+                            <label class="btn btn-outline-secondary btn-sm rounded-pill" for="parking">Giữ xe</label>
+                            
+                            <input type="checkbox" class="btn-check" id="kitchen" autocomplete="off">
+                            <label class="btn btn-outline-secondary btn-sm rounded-pill" for="kitchen">Bếp</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="fw-bold small text-muted mb-1">MÔ TẢ CHI TIẾT</label>
+                        <textarea class="form-control" rows="4" placeholder="Mô tả thêm về phòng trọ..."></textarea>
+                    </div>
+                    
+                    <div class="mb-3">
+    <label class="fw-bold small text-muted mb-2">HÌNH ẢNH / VIDEO</label>
+
+    <div class="border rounded-3 p-4 text-center bg-light">
+        
+        <div class="mb-2">
+            <i class="fas fa-camera fa-2x text-secondary opacity-25"></i>
+        </div>
+
+        <button type="button" class="btn btn-custom rounded-pill fw-bold px-4 shadow-sm" onclick="document.getElementById('imgInput').click()">
+            <i class="fas fa-plus me-1"></i> Tải ảnh từ máy
+        </button>
+        
+        <div class="mt-2 text-muted small fst-italic">Hỗ trợ định dạng JPG, PNG, MP4</div>
+
+        <input type="file" id="imgInput" multiple accept="image/*" class="d-none">
+    </div>
+
+    <div class="d-flex flex-wrap gap-2 mt-3" id="previewArea"></div>
+</div>
+
+                </form>
+            </div>
+
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-light flex-grow-1 fw-bold" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-custom flex-grow-1 fw-bold">Đăng tin ngay</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- footer -->
+
+    <footer class="footer text-black mt-3 pt-5 pb-2"style="background-color: #D3E2F4;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <h5>Web cho thuê phòng trọ K&A</h5>
+            <p>
+                Chúng tôi cam kết mang đến cho bạn những lựa chọn
+                bất động sản tốt nhất với dịch vụ chuyên nghiệp và tận
+                tâm.
+            </p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> 470 Đ.Trần Đại Nghĩa, Hoà
+              Hải, Ngũ Hành Sơn, Đà Nẵng <br />
+              <i class="fas fa-phone"></i> 0773351082 <br />
+              <i class="fas fa-envelope"></i> anhnlp@vku.udn.vn
+            </p>
+          </div>
+          <div class="col-md-2 mb-3">
+            <h5>Về Chúng Tôi</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="about.html" class="text-black text-decoration-none"
+                  >Giới thiệu</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-black text-decoration-none"
+                  >Tuyển dụng</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-black text-decoration-none"
+                  >Điều khoản</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-black text-decoration-none"
+                  >Chính sách bảo mật</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-3">
+            <h5>Hỗ Trợ Khách Hàng</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="contact.html" class="text-black text-decoration-none"
+                  >Liên hệ</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-black text-decoration-none"
+                  >Hướng dẫn mua hàng</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-black text-decoration-none"
+                  >Chính sách đổi trả</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-black text-decoration-none"
+                  >Câu hỏi thường gặp</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-3">
+            <h5>Kết Nối Với Chúng Tôi</h5>
+    <a href="https://www.facebook.com/Pnh2k6" class="text-black me-2" target="_blank">
+    <i class="bi bi-facebook fs-4"></i>
+    </a>
+    <a href="https://www.instagram.com/_nlp.a56/" class="text-black me-2" target="_blank">
+    <i class="bi bi-instagram fs-4"></i>
+    </a>
+    <a href="#" class="text-black">
+    <i class="bi bi-tiktok fs-4"></i>
+    </a>
+            <h5 class="mt-3">Đăng Ký Nhận Tin</h5>
+            <form>
+              <div class="input-group mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Email của bạn"
+                  aria-label="Email của bạn"
+                />
+                <button class="btn btn-primary" type="button">Đăng ký</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <hr class="mt-2 mb-3" />
+        <div class="row">
+          <div class="col text-center">
+            <p>
+              &copy; 2025 Web tìm phòng trọ K&A <br />
+              Uy tín, chất lượng hàng đầu miền Trung-Tây Nguyên.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <script src="../src/assests/js/script.js"></script>
+
+    <!-- boostrap js -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+     crossorigin="anonymous"></script>
+</body>
+</html>

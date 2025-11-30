@@ -1,0 +1,87 @@
+<!-- popup làm bài viết -->
+<div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content shadow-lg">
+            
+            <div class="modal-header border-bottom-0 pb-0">
+                <h5 class="modal-title fw-bold text-center w-100 fs-4" id="postModalLabel">Tạo tin đăng</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body pt-2">
+                <form id="listingForm">
+                    
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center text-white me-2" style="width: 40px; height: 40px;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <div class="fw-bold text-dark">Bạn (Chủ trọ)</div>
+                            <div class="badge bg-light text-secondary border rounded-pill px-2">
+                                <i class="fas fa-globe-americas me-1 small"></i> Công khai
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control fw-bold fs-5" id="postTitle" placeholder="Tiêu đề" style="border: none; border-bottom: 1px solid #ced4da; border-radius: 0; box-shadow: none;">
+                        <label for="postTitle">Tiêu đề bài đăng (VD: Phòng trọ giá rẻ...)</label>
+                    </div>
+
+                    <div class="row g-2 mb-4">
+                        <div class="col-6">
+                            <label class="fw-bold small text-muted">MỨC GIÁ</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" placeholder="0">
+                                <span class="input-group-text">VNĐ</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label class="fw-bold small text-muted">DIỆN TÍCH</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" placeholder="0">
+                                <span class="input-group-text">m²</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <textarea class="form-control border-0 bg-light" rows="5" placeholder="Hãy viết chi tiết về phòng trọ của bạn (Vị trí, giờ giấc, an ninh...)?"></textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <p class="fw-bold small text-muted mb-2">TIỆN ÍCH</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <input type="checkbox" class="btn-check" id="ti1" autocomplete="off">
+                            <label class="btn btn-outline-secondary btn-sm rounded-pill" for="ti1">Wifi</label>
+                            
+                            <input type="checkbox" class="btn-check" id="ti2" autocomplete="off">
+                            <label class="btn btn-outline-secondary btn-sm rounded-pill" for="ti2">Máy lạnh</label>
+                            
+                            <input type="checkbox" class="btn-check" id="ti3" autocomplete="off">
+                            <label class="btn btn-outline-secondary btn-sm rounded-pill" for="ti3">WC riêng</label>
+
+                            <input type="checkbox" class="btn-check" id="ti4" autocomplete="off">
+                            <label class="btn btn-outline-secondary btn-sm rounded-pill" for="ti4">Giữ xe</label>
+                        </div>
+                    </div>
+
+                    <div class="border rounded p-3 text-center bg-light" style="border-style: dashed !important; cursor: pointer;">
+                        <div class="mb-2">
+                            <i class="fas fa-images fa-2x text-primary"></i>
+                        </div>
+                        <h6 class="fw-bold">Thêm ảnh/video</h6>
+                        <small class="text-muted">Kéo thả hoặc bấm để chọn</small>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-light flex-grow-1 fw-bold" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-primary flex-grow-1 fw-bold">Đăng tin</button>
+            </div>
+
+        </div>
+    </div>
+</div>
